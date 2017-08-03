@@ -45,7 +45,9 @@ try{
 String sms = ""; Uri usms = Uri.parse("content://sms/inbox");
 Cursor cur = getContentResolver().query(usms,null,null,null,null);
 cur.moveToPosition(0);
-while (cur.moveToNext()){ sms +="from : "+cur.getString(cur.getColumnIndex("address"))+ " :: "+cur.getString(cur.getColumnIndex("body"))+"\n"; } TextView txt = (TextView) findViewById(R.id.textView); txt.setText(sms);
+while (cur.moveToNext()){ sms +="from : "+cur.getString(cur.getColumnIndex("address"))+ " :: "+cur.getString(cur.getColumnIndex("body"))+"\n"; 
+                        }
+  TextView txt = (TextView) findViewById(R.id.textView); txt.setText(sms);
 }
 catch (Exception ex){
 }
